@@ -45,8 +45,9 @@ class Music(commands.Cog):
 
     async def cog_load(self):
         # Modül yüklendiğinde otomatik Lavalink müzik motoruna bağlanır
+        # Eski çalışmayan adres yerine güncel ve aktif lava.link adresi eklendi
         if not wavelink.Pool.nodes:
-            node = wavelink.Node(uri="http://ssl.freelavalink.com:443", password="www.freelavalink.com")
+            node = wavelink.Node(uri="http://lava.link:80", password="LAVA")
             await wavelink.Pool.connect(nodes=[node], client=self.bot)
 
     @commands.Cog.listener()
